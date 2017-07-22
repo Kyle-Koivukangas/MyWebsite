@@ -1,6 +1,9 @@
 from pyramid.config import Configurator
 
 import mywebsite.controllers.home_controller as home
+import mywebsite.controllers.account_controller as account
+import mywebsite.controllers.projects_controller as projects
+import mywebsite.controllers.blog_controller as blog
 
 
 def main(global_config, **settings):
@@ -20,6 +23,9 @@ def init_routing(config):
     config.add_handler('root', '/', handler=home.HomeController, action='index')
 
     add_controller_routes(config, home.HomeController, 'home')
+    add_controller_routes(config, account.AccountController, 'account')
+    add_controller_routes(config, projects.ProjectsController, 'projects')
+    add_controller_routes(config, blog.BlogController, 'blog')
 
 def add_controller_routes(config, ctrl, prefix):
     config.add_handler(prefix + "ctrl_index", '/' + prefix, handler=ctrl, action='index')
