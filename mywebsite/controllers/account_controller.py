@@ -14,9 +14,7 @@ class AccountController(BaseController):
         return {'value': 'SIGNIN'}
 
     # GET /ACCOUNT/REGISTER
-    @pyramid_handlers.action(renderer="templates/account/register.pt",
-                            request_method='GET',
-                            name='register')
+    @pyramid_handlers.action(renderer="templates/account/register.pt", request_method='GET', name='register')
     def register_get(self):
         print("Calling register via GET...")
 
@@ -24,9 +22,7 @@ class AccountController(BaseController):
         return vm.to_dict()
 
     # POST /ACCOUNT/REGISTER
-    @pyramid_handlers.action(renderer="templates/account/register.pt",
-                            request_method='POST',
-                            name='register')
+    @pyramid_handlers.action(renderer="templates/account/register.pt", request_method='POST', name='register')
     def register_post(self):
         vm = RegisterViewModel()
         vm.from_dict(self.request.POST)
@@ -46,16 +42,12 @@ class AccountController(BaseController):
         return {'value': 'REGISTER'}
 
     
-    @pyramid_handlers.action(renderer="templates/account/login.pt",
-                            request_method='GET',
-                            name='login')
+    @pyramid_handlers.action(renderer="templates/account/login.pt", request_method='GET', name='login')
     def login_get(self):
         vm = LoginViewModel()
         return vm.to_dict()
 
-    @pyramid_handlers.action(renderer="templates/account/login.pt",
-                            request_method='POST',
-                            name='login')
+    @pyramid_handlers.action(renderer="templates/account/login.pt", request_method='POST', name='login')
     def login_post(self):
         vm = LoginViewModel()
         vm.from_dict(self.request.POST)
