@@ -1,0 +1,21 @@
+
+
+<div metal:use-macro="view.layout">
+    <div metal:fill-slot="main_content">
+
+
+        <h1>Login</h1>
+        <div class="dev_mode" tal:condition="view.dev_mode_on">The value of this controller is  ${value}</div>
+
+        <div class="error-msg" tal:condition="error">Error: ${error}</div>
+
+        <form class="standard-form" action="" method="POST">
+            <input name="email" required type="email" value="${email}" placeholder="Email Address"><br>
+            <input name="password" required type="password" value="${password}" placeholder="Password"><br>
+            <button type="submit">Login</button>
+        </form>
+
+
+    </div>
+</div>
+

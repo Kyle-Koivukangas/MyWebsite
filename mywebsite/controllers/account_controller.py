@@ -1,7 +1,7 @@
 import pyramid_handlers
-
 from mywebsite.controllers.base_controller import BaseController
 from mywebsite.viewmodels.register_viewmodel import RegisterViewModel
+from mywebsite.viewmodels.login_viewmodel import LoginViewModel
 
 
 class AccountController(BaseController):
@@ -44,3 +44,30 @@ class AccountController(BaseController):
         self.redirect('/account')
         
         return {'value': 'REGISTER'}
+
+    
+    @pyramid_handlers.action(renderer="templates/account/login.pt",
+                            request_method='GET',
+                            name='login')
+    def login_get(self):
+        vm = LoginViewModel()
+        return vm.to_dict()
+
+    @pyramid_handlers.action(renderer="templates/account/login.pt",
+                            request_method='POST',
+                            name='login')
+    def login_post(self):
+        vm = LoginViewModel()
+        vm.from_dict(self.request.POST)
+
+        print("Calling Login view POST.. {} {}".format(vm.email, vm.password))
+
+        vm.validate()
+        if vm.error:
+            vm.password = None
+            return vm.to_dict()
+
+        print('Login success, Redirecting..')
+        self.redirect('/account/index')
+
+        return {'value': "LOGGED_IN"}

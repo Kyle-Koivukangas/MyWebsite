@@ -69,7 +69,7 @@
                             <ul class="dropdown-menu">
                                 <li>
 
-                                    <form class="standard-form" action="" method="POST">
+                                    <form class="standard-form login-form" action="/account/login" method="POST">
                                         <input name="text" required type="text" value="" placeholder="Email Address"><br>
                                         <input name="password" required type="password" value="" placeholder="Password"><br>
                                         <button id="login-btn" type="submit">Login</button>
