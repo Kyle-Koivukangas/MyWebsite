@@ -1,9 +1,12 @@
 from pyramid.config import Configurator
+import os
 
+import mywebsite
 import mywebsite.controllers.home_controller as home
 import mywebsite.controllers.account_controller as account
 import mywebsite.controllers.projects_controller as projects
 import mywebsite.controllers.blog_controller as blog
+from mywebsite.data.dbsession import DbSessionFactory
 
 
 def main(global_config, **settings):
@@ -13,9 +16,17 @@ def main(global_config, **settings):
 
     init_includes(config)  
     init_routing(config)
+    init_db(config)
 
     config.scan()
     return config.make_wsgi_app()
+
+def init_db(config):
+    top_folder = os.path.dirname(mywebsite.__file__)
+    rel_folder = os.path.join('db', 'mywebsite.sqlite')
+
+    db_file = os.path.join(top_folder, rel_folder)
+    DbSessionFactory.global_init(db_file)
 
 def init_routing(config):
     config.add_static_view('static', 'static', cache_max_age=3600)
