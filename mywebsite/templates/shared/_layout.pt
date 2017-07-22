@@ -36,9 +36,12 @@
         <a href="/account/register">Register</a>
     </div>
 
-    <a href="/home/index">home</a>
-    <a href="/albums">albums</a>
-    <a href="/home/contact">contact</a>
+    <a href="/home/index">Home</a>
+    <a href="/albums">Projects</a>
+    <a href="/home/about">About</a>    
+    <a href="/home/contact">Contact</a>
+    <a href="/home/about">About</a>
+    
 </div>
 
 <div class="main_content">

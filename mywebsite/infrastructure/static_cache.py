@@ -27,7 +27,7 @@ enable_tracing = True
 
 
 def build_cache_id(relative_file_url: str):
-    "builds a cache id based on a hash from the file it's run on"
+    "computes hash of file to see if cache is out of date"
     if not relative_file_url:
         return "ERROR_NO_FILE_SPECIFIED"
 
@@ -53,6 +53,7 @@ def build_cache_id(relative_file_url: str):
 
 
 def __get_file_hash(filename):
+    "returns an md5 hash of the file it's passed"
     md5 = hashlib.md5()
 
     with open(filename, 'rb') as fin:
