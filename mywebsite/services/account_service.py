@@ -16,13 +16,23 @@ class AccountService:
         return accounts
 
     @staticmethod
-    def create_account(email: str, password: str, superuser: bool):
-
+    def create_account(email: str, password: str, superuser: bool=False ):
         session = DbSessionFactory.create_session()
 
-        account = Account(email=email, password=password, created=datetime.now(), email_confirmed=True, is_super_user=False, )
+        account = Account(email=email.lower().strip(), password=password, is_super_user=superuser)
         
         session.add(account)
     
         session.commit()
         return account
+
+    @classmethod
+    def find_account_by_email(cls, email):
+        if not email or not email.strip():
+            return None
+        email = email.lower().strip()
+
+        session = DbSessionFactory.create_session()
+
+        account = session.query(Account).filter(Account.email == email).first()
+        return account        

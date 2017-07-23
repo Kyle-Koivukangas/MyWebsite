@@ -2,6 +2,7 @@ import pyramid_handlers
 from mywebsite.controllers.base_controller import BaseController
 from mywebsite.viewmodels.register_viewmodel import RegisterViewModel
 from mywebsite.viewmodels.login_viewmodel import LoginViewModel
+from mywebsite.services.account_service import AccountService
 
 
 class AccountController(BaseController):
@@ -35,8 +36,15 @@ class AccountController(BaseController):
             vm.confirm_password = None
             return vm.to_dict()
 
+        account = AccountService.find_account_by_email(vm.email)
+        if account:
+            vm.error = "An account with this email already exists. Please log in instead."
+            return vm.to_dict()
+        
+        account = AccountService.create_account(vm.email, vm.password)
+        print("Registered new user: " + account.email)
 
-        print('Redirecting..')
+        print('Redirecting to account page...')
         self.redirect('/account')
         
         return {'value': 'REGISTER'}
