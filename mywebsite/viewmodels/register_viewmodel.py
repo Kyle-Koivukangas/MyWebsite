@@ -1,4 +1,5 @@
 from mywebsite.viewmodels.base_viewmodel import BaseViewModel
+import datetime
 
 
 class RegisterViewModel(BaseViewModel):
@@ -6,6 +7,9 @@ class RegisterViewModel(BaseViewModel):
         self.email = None
         self.password = None
         self.confirm_password = None
+        self.superuser = False
+        self.email_confirmed = False
+        self.created = datetime.datetime.now()
         self.error = None
 
     def from_dict(self, data_dict):
