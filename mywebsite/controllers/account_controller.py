@@ -40,7 +40,7 @@ class AccountController(BaseController):
         if account:
             vm.error = "An account with this email already exists. Please log in instead."
             return vm.to_dict()
-        
+
         account = AccountService.create_account(vm.email, vm.password)
         print("Registered new user: " + account.email)
 

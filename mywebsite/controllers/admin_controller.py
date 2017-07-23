@@ -33,10 +33,10 @@ class AdminController(BaseController):
         # if not vm.validate():
         #     return vm.to_dict()
 
-        # Insert album
+        
         new_account = AccountService.create_account(email=vm.email, password=vm.password, superuser=vm.superuser)
         # log new album
-        print("Created a new account with id {}".format(new_account.id))
+        print("Created a new account with email {}".format(new_account.email))
 
         # redirect
         self.redirect('/admin/accounts')

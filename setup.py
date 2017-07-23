@@ -15,6 +15,7 @@ requires = [
     'pyramid_handlers',
     'waitress',
     'sqlalchemy',
+    'passlib',
     ]
 
 tests_require = [
