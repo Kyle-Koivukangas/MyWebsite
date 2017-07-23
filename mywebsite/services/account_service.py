@@ -1,4 +1,4 @@
-
+from passlib.handlers.sha2_crypt import sha512_crypt
 from datetime import datetime
 
 from mywebsite.data.account import Account
@@ -19,8 +19,11 @@ class AccountService:
     def create_account(email: str, password: str, superuser: bool=False ):
         session = DbSessionFactory.create_session()
 
-        account = Account(email=email.lower().strip(), password=password, is_super_user=superuser)
-        
+        account = Account()
+        account.email = email.lower().strip()
+        account.password_hash = AccountService.hash_text(password)
+        account.is_super_user = superuser
+
         session.add(account)
     
         session.commit()
@@ -36,3 +39,8 @@ class AccountService:
 
         account = session.query(Account).filter(Account.email == email).first()
         return account        
+
+    @staticmethod
+    def hash_text(text):
+        hashed_text = sha512_crypt.encrypt(text, rounds=150_000)
+        return hashed_text
