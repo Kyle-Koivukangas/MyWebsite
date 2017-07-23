@@ -32,7 +32,7 @@
     <div metal:define-slot="additional_css"></div>
 </head>
 
-<body style="background-image:url('/static/img/greywood.jpg');" >
+<body >
     <header>
 
         <!-- Navigation -->
@@ -69,8 +69,8 @@
                             <ul class="dropdown-menu">
                                 <li>
 
-                                    <form class="standard-form login-form" action="login" method="POST">
-                                        <input name="text" required type="text" value="" placeholder="Email Address"><br>
+                                    <form class="standard-form login-form" action="/account/login" method="POST">
+                                        <input name="email" required type="text" value="" placeholder="Email Address"><br>
                                         <input name="password" required type="password" value="" placeholder="Password"><br>
                                         <button id="login-btn" type="submit">Login</button>
                                     </form>
