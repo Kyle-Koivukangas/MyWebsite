@@ -12,6 +12,7 @@
             <input name="email" required type="email" value="${email}" placeholder="Email Address"><br>
             <input name="password" required type="password" value="${password}" placeholder="Password"><br>
             <input name="confirm_password" required type="password" value="${confirm_password}" placeholder="Confirm Password"><br>
+            <input type="checkbox" name="superuser" value="${superuser}"> Superuser?<br/>
             <button type="submit">Register</button>
         </form>
 
