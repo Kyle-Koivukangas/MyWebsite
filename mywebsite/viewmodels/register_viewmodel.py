@@ -14,6 +14,7 @@ class RegisterViewModel(BaseViewModel):
         self.email = data_dict.get('email')
         self.password = data_dict.get('password')
         self.confirm_password = data_dict.get('confirm_password')
+        self.superuser = data_dict.get('superuser')
 
     def validate(self):
         self.error = None

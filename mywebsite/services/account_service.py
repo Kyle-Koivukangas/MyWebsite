@@ -16,7 +16,7 @@ class AccountService:
         return accounts
 
     @staticmethod
-    def create_account(email: str, password: str, superuser: bool=False ):
+    def create_account(email: str, password: str, superuser: bool=False):
         session = DbSessionFactory.create_session()
 
         account = Account()
