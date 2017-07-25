@@ -29,7 +29,7 @@ class BaseController:
         if permanent:
             raise exc.HTTPMovedPermanently(to_url)
         raise exc.HTTPFound(to_url)
-        
+
     @property
     def data_dict(self):
         data = dict()

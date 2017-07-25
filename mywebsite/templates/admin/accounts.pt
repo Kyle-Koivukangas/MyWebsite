@@ -8,7 +8,7 @@
         <div>
             <ul>
                 <li>Email: Password: </li>
-                <li tal:repeat="a accounts">Email: ${a.email} <br>Password: ${a.password_hash}<br>Superuser = ${str(a.is_super_user)}</li>
+                <li tal:repeat="a accounts">Email: ${a.email} <br>Password: ${a.password_hash}<br>Date Created: ${str(a.created)}<br>Superuser = ${str(a.is_super_user)}</li>
                 
             </ul>
         </div>
