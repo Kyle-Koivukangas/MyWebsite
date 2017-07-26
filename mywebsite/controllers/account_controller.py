@@ -79,3 +79,12 @@ class AccountController(BaseController):
         self.redirect('/account/index')
 
         return {'value': "LOGGED_IN"}
+
+    @pyramid_handlers.action(renderer="templates/account/logout.pt")
+    def logout(self):
+        
+
+        cookie_auth.set_auth(self.request, "logged_out")
+        self.redirect("/home/index")
+        
+        return {}

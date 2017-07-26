@@ -20,7 +20,9 @@ class BaseController:
 
     @property
     def is_logged_in(self):
-        return False
+        if not cookie_auth.get_user_id_from_cookie(self.request):
+            return False
+        return True
 
     @property
     def dev_mode_on(self):
