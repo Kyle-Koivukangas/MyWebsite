@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 #SQLite database
-.sqlite
+*.sqlite
 
 # Distribution / packaging
 .Python
@@ -102,3 +102,4 @@ ENV/
 
 # mypy
 .mypy_cache/
+mywebsite/db/mywebsite.sqlite
