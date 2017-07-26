@@ -3,7 +3,7 @@ from mywebsite.controllers.base_controller import BaseController
 from mywebsite.viewmodels.register_viewmodel import RegisterViewModel
 from mywebsite.viewmodels.login_viewmodel import LoginViewModel
 from mywebsite.services.account_service import AccountService
-
+import mywebsite.infrastructure.cookie_auth as cookie_auth
 
 class AccountController(BaseController):
     @pyramid_handlers.action(renderer="templates/account/index.pt")
@@ -11,7 +11,7 @@ class AccountController(BaseController):
         return {'value': 'ACCOUNT'}
 
     @pyramid_handlers.action(renderer="templates/account/signin.pt")
-    def signin(self):
+    def login_get(self):
         return {'value': 'SIGNIN'}
 
     # GET /ACCOUNT/REGISTER
@@ -66,6 +66,8 @@ class AccountController(BaseController):
         if vm.error:
             vm.password = None
             return vm.to_dict()
+
+        cookie_auth.set_auth(self.request, account.id)
 
         print('Login success, Redirecting..')
         self.redirect('/account/index')
