@@ -64,7 +64,7 @@
                             <a href="/blog/index">Blog</a>
                         </li>
                         
-                        <li class="dropdown">
+                        <li tal:condition="not view.is_logged_in" class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
@@ -81,7 +81,19 @@
 
                             </ul>
                         </li>
+                        <li tal:condition="view.is_logged_in" class="dropdown">
+                            <a href="/account/index" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/account/index">Account Page</a>
+                                    
+                                </li>
+                                <li>
+                                    <a href="/account/logout">Logout</a>
+                                </li>
 
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
