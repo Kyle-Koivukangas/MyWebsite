@@ -1,7 +1,9 @@
-import mywebsite.infrastructure.static_cache as static_cache
-from mywebsite.infrastructure.suppressor import suppress
 import pyramid.renderers
 import pyramid.httpexceptions as exc
+
+import mywebsite.infrastructure.static_cache as static_cache
+from mywebsite.infrastructure.suppressor import suppress
+import mywebsite.infrastructure.cookie_auth as cookie_auth
 
 
 class BaseController:
@@ -38,3 +40,7 @@ class BaseController:
         data.update(self.request.matchdict)
 
         return data
+
+    @property
+    def logged_in_user_id(self):
+        return cookie_auth.get_user_id_from_cookie(self.request)
