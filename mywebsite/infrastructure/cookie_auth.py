@@ -17,15 +17,15 @@ def get_user_id_from_cookie(request):
     if auth_cookie_name not in request.cookies:
         return None
 
-    val = request.cookies[auth_cookie_name]
-    parts = val.split(':')
+    cookie_value = request.cookies[auth_cookie_name]
+    parts = cookie_value.split(':')
     if len(parts) != 2:
         return None
 
-    user_id = parts [0]
-    hash_val = parts[1]
-    hash_val_check = __hash_text(user_id)
-    if hash_val != hash_val_check:
+    user_id = parts[0]
+    expected_hash = parts[1]
+    hash_val = __hash_text(user_id)
+    if hash_val != expected_hash:
         print("Hash mismatch, invalid cookie")
         return None
 
