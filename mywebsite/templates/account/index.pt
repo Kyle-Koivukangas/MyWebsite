@@ -1,7 +1,15 @@
 
 <div metal:use-macro="view.layout">
     <div metal:fill-slot="main_content">
-        <h1>Your Account</h1>
-        <div>The value of this controller is  ${value}</div>
+        <h1>My Account</h1>
+        <div>
+            <ul>
+                <li>User ID: ${id}</li>
+                <li>Email: ${email}</li>
+                <li>Email Confirmed?: ${str(email_confirmed)}</li>
+                <li>Date Created: ${created}</li>
+                <li>Admin?: ${str(is_super_user)}</li>
+            </ul>
+        </div>
     </div>
 </div>
