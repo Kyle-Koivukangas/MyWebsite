@@ -8,8 +8,13 @@ import mywebsite.infrastructure.cookie_auth as cookie_auth
 class AccountController(BaseController):
     @pyramid_handlers.action(renderer="templates/account/index.pt")
     def index(self):
-        vm = LoginViewModel()
-        return vm.to_dict()
+        user_id = self.logged_in_user_id
+        if not user_id:
+            print("Cannot view account page, must login (allow cookies as well)")
+            self.redirect("/account/login")
+        account = AccountService.find_account_by_id(user_id)
+        account = {'email': account.email, 'created': account.created, 'id': account.id, 'is_super_user': account.is_super_user, 'email_confirmed': account.email_confirmed}
+        return account
 
     @pyramid_handlers.action(renderer="templates/account/signin.pt")
     def login_get(self):
