@@ -47,3 +47,12 @@ class BaseController:
     @property
     def logged_in_user_id(self):
         return cookie_auth.get_user_id_from_cookie(self.request)
+
+    @property
+    def logged_in_user(self):
+        """accesses the database and returns user account details via user ID in auth cookie."""
+        user_id = self.logged_in_user_id
+        if not user_id:
+            return None
+
+        return AccountService.find_account_by_id(user_id)
