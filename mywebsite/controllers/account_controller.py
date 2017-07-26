@@ -8,7 +8,8 @@ import mywebsite.infrastructure.cookie_auth as cookie_auth
 class AccountController(BaseController):
     @pyramid_handlers.action(renderer="templates/account/index.pt")
     def index(self):
-        return {'value': 'ACCOUNT'}
+        vm = LoginViewModel()
+        return vm.to_dict()
 
     @pyramid_handlers.action(renderer="templates/account/signin.pt")
     def login_get(self):
@@ -62,9 +63,9 @@ class AccountController(BaseController):
 
         print("Calling Login view POST.. {} {}".format(vm.email, vm.password))
 
-        vm.validate()
-        if vm.error:
-            vm.password = None
+        account = AccountService.get_authenticated_account(vm.email, vm.password)
+        if not account:
+            vm.error = "Email address or password are incorrect."
             return vm.to_dict()
 
         cookie_auth.set_auth(self.request, account.id)

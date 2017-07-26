@@ -44,3 +44,13 @@ class AccountService:
     def hash_text(text):
         hashed_text = sha512_crypt.encrypt(text, rounds=150_000)
         return hashed_text
+
+    @classmethod
+    def get_authenticated_account(cls, email, password):
+        account = AccountService.find_account_by_email(email)
+        if not account:
+            return None
+        if not sha512_crypt.verify(password, account.password_hash):
+            return None
+
+        return account
