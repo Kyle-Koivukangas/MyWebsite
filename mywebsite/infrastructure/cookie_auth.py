@@ -34,3 +34,10 @@ def get_user_id_from_cookie(request):
 def __hash_text(text):
     text = "my_saltshake_brings" + text + "all_the_boys_to_the_yard"
     return hashlib.sha512(text.encode('utf-8')).hexdigest()
+
+def logout(request):
+    request.add_response_callback(lambda request, response: __clear_cookie_callback(response, auth_cookie_name))
+
+
+def __clear_cookie_callback(response, name):
+    response.delete_cookie(name)
