@@ -86,7 +86,6 @@
                             <ul class="dropdown-menu">
                                 <li>
                                     <a href="/account/index">Account Page</a>
-                                    
                                 </li>
                                 <li>
                                     <a href="/account/logout">Logout</a>
