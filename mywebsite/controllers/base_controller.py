@@ -4,6 +4,7 @@ import pyramid.httpexceptions as exc
 import mywebsite.infrastructure.static_cache as static_cache
 from mywebsite.infrastructure.suppressor import suppress
 import mywebsite.infrastructure.cookie_auth as cookie_auth
+from mywebsite.services.account_service import AccountService
 
 
 class BaseController:
@@ -20,7 +21,9 @@ class BaseController:
 
     @property
     def is_logged_in(self):
-        if not cookie_auth.get_user_id_from_cookie(self.request):
+        if not self.logged_in_user_id:
+            return False
+        if self.logged_in_user_id == "logged_out":
             return False
         return True
 
