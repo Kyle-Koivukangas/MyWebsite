@@ -23,8 +23,6 @@ class BaseController:
     def is_logged_in(self):
         if not self.logged_in_user_id:
             return False
-        if self.logged_in_user_id == "logged_out":
-            return False
         return True
 
     @property
