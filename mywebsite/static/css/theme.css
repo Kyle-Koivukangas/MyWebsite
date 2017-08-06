@@ -5,7 +5,19 @@
  */
 
 /* Global Styles */
-
+.navbar-inverse {
+    background-color: rgba(25, 25, 25, .90);
+    color: white;
+}
+.navbar-inverse .navbar-brand {
+    color: #d0d0d0;
+}
+.navbar-inverse .navbar-nav li a {
+    color: #d0d0d0;
+}
+.navbar {
+    border: 0px solid transparent;
+}
 html,
 body {
     height: 100%;
