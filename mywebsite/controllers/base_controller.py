@@ -15,7 +15,7 @@ class BaseController:
         self.build_cache_id = static_cache.build_cache_id
 
         #grab layout and make available to all controllers
-        layout_render = pyramid.renderers.get_renderer('mywebsite:templates/shared/_layout_grids.pt')
+        layout_render = pyramid.renderers.get_renderer('mywebsite:templates/shared/_layout.pt')
         impl = layout_render.implementation()
         self.layout = impl.macros['layout']
 
@@ -56,3 +56,8 @@ class BaseController:
             return None
 
         return AccountService.find_account_by_id(user_id)
+
+    @property
+    def active_page(self):
+        """Shows the current 'active' page being displayed, used for lighting up navbar on active page"""
+
