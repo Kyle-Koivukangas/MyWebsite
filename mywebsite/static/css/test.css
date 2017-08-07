@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,700");
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 body {
   background: #353535;
@@ -9,50 +10,66 @@ body {
   font-size: 1.2rem;
   line-height: 1.45;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+}
 
 .sidebar {
   background: #4f4f4f;
   flex: 1 1 20%;
   min-width: 300px;
-  padding: 3em; }
+  padding: 3em;
+}
 
 .logo {
   text-transform: uppercase;
-  margin-bottom: 2em; }
-  @media (min-width: 1500px) {
-    .logo {
-      margin-bottom: 5em; } }
-  .logo span {
-    font-weight: 700; }
+  margin-bottom: 2em;
+}
+
+@media (min-width: 1500px) {
+  .logo {
+    margin-bottom: 5em;
+  }
+}
+
+.logo span {
+  font-weight: 700;
+}
 
 .nav-item {
   color: #737373;
   text-decoration: none;
   font-size: 1.7rem;
   display: inline-block;
-  margin-right: 2em; }
-  @media (min-width: 1500px) {
-    .nav-item {
-      display: block;
-      margin: 7vh 0; } }
-  .nav-item.active {
-    color: #c4c4c4; }
+  margin-right: 2em;
+}
+
+@media (min-width: 1500px) {
+  .nav-item {
+    display: block;
+    margin: 7vh 0;
+  }
+}
+
+.nav-item.active {
+  color: #c4c4c4;
+}
 
 .main-content {
-  padding: 10%;
+  padding: 3%;
   flex: 1 1 80%;
-  min-height: 100vh; }
+  min-height: 100vh;
+}
 
-.portfolio {
+.projects {
   display: grid;
   height: 100%;
   grid-template-rows: repeat(8, 1fr);
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 20px; }
+  grid-gap: 10px;
+}
 
-.portfolio-item {
-  background: #f96855;
+.project-item {
+  background: #9bf764;
   color: #c4c4c4;
   font-weight: 700;
   display: flex;
@@ -63,41 +80,61 @@ body {
   background-position: top left;
   transition: all ease-in-out 300ms;
   position: relative;
-  z-index: 10; }
-  .portfolio-item.small {
-    grid-row: span 1;
-    grid-column: span 1; }
-  .portfolio-item.medium {
-    grid-row: span 2;
-    grid-column: span 2; }
-  .portfolio-item.large {
-    grid-row: span 3;
-    grid-column: span 3; }
-  .portfolio-item.tall {
-    grid-row: span 3;
-    grid-column: span 2; }
-  .portfolio-item.wide {
-    grid-row: span 2;
-    grid-column: span 3; }
-  .portfolio-item:hover {
-    color: white;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.85); }
+  z-index: 10;
+}
 
-.two {
-  background-image: url(//unsplash.it/800/600); }
-  .two::before {
-    content: '';
-    display: block;
-    background: #353535;
-    opacity: 0.8;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transition: all ease-in-out 300ms;
-    z-index: -1; }
-  .two:hover::before {
-    opacity: 0.2; }
+.project-item.small {
+  grid-row: span 1;
+  grid-column: span 1;
+}
 
-/*# sourceMappingURL=test.css.map */
+.project-item.medium {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
+.project-item.large {
+  grid-row: span 3;
+  grid-column: span 3;
+}
+
+.project-item.tall {
+  grid-row: span 4;
+  grid-column: span 2;
+}
+
+.project-item.wide {
+  grid-row: span 2;
+  grid-column: span 3;
+}
+
+.project-item:hover {
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.85);
+}
+
+.hovereffect::before {
+  content: '';
+  display: block;
+  background: #353535;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+  background-size: 80%;
+  background-position: 0px 0px;
+}
+
+.hovereffect:hover::before {
+  opacity: 0.0;
+  background-size: 130%;
+  background-position: 0px 0px;
+}
+
+.footer {
+  clear: both;
+}

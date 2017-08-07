@@ -5,14 +5,12 @@
 
     <div metal:fill-slot="main_content">
         <div class="projects">
-            <div class="project-item medium">one</div>
-            <div class="project-item large two">two</div>
-            <div class="project-item medium">three</div>
-            <div class="project-item small">four</div>
-            <div class="project-item tall">five</div>
-            <div class="project-item wide">six</div>
-            <div class="project-item wide">six</div>
-            <div class="project-item medium">one</div>
+            <div class="project-item tall hovereffect" style="background-image: url('/static/img/pokerbot.jpg');">Poker Bot</div>
+            <div class="project-item large hovereffect"  style="background-image: url('/static/img/mywebdesign.jpg');">Web Design</div>            
+            <div class="project-item small hovereffect" style="background-image: url('//unsplash.it/400/400');">three</div>
+            <div class="project-item medium hovereffect" style="background-image: url('/static/img/morse.png');">Morse Code Generator</div>            
+            <div class="project-item large hovereffect" style="background-image: url('/static/img/kcrypt.jpg');">kCrypt</div>
+            <div class="project-item medium hovereffect" style="background-image: url('/static/img/backupmanager.jpg');">BackupManager</div>
         </div>
 
 
