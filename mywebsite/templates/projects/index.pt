@@ -1,13 +1,19 @@
 <div metal:use-macro="view.layout">
-    <div metal:fill-slot="addtional_css"></div>
+    <div metal:fill-slot="additional_css">
+        <link href="/static/css/test.css?cacheId=${view.build_cache_id('/static/css/test.css')}" rel="stylesheet">
+    </div>
 
     <div metal:fill-slot="main_content">
-
-
-        <h1>Projects page</h1>
-        <div>The value from the controller is ${value}.</div>
-
-
+        <div class="projects">
+            <div class="project-item medium">one</div>
+            <div class="project-item large two">two</div>
+            <div class="project-item medium">three</div>
+            <div class="project-item small">four</div>
+            <div class="project-item tall">five</div>
+            <div class="project-item wide">six</div>
+            <div class="project-item wide">six</div>
+            <div class="project-item medium">one</div>
+        </div>
 
 
     </div> <!-- main_content -->
