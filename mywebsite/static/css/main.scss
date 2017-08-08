@@ -37,6 +37,9 @@ $link-color: $accent;
 // ===================
 
 * { box-sizing: border-box; }
+.active {
+  color: $menu-active-color!important;
+}
 
 body {
   background: $body-background;
@@ -55,9 +58,10 @@ body {
 
 .sidebar {
   background: $menu-background;
-  flex: 1 1 20%;
+  flex: 1 1 10%;
   min-width: 300px;
   padding: 3em;
+  padding-right: 0px;
 }
 
 .logo {
@@ -85,10 +89,13 @@ body {
   }
   
   &.active {
-    color: $menu-active-color;
+    color: $menu-active-color!important;
   }
 }
 
+nav a:focus, nav a:active, nav a:hover, :target {
+  color: $light-gray;
+}
 
 
 // ===================
@@ -137,26 +144,46 @@ body {
   &.small {
     grid-row: span 1;
     grid-column: span 1;
+    @media (max-width: 1000px) {
+      grid-column: span 6;
+      grid-row: span 2;
+    }
   }
   
   &.medium {
     grid-row: span 2;
     grid-column: span 2;
+    @media (max-width: 1000px) {
+      grid-column: span 6;
+      grid-row: span 2;
+    }
   }
   
   &.large {
     grid-row: span 3;
     grid-column: span 3;
+    @media (max-width: 1000px) {
+      grid-column: span 6;
+      grid-row: span 2;
+    }
   }
   
   &.tall {
     grid-row: span 4;
     grid-column: span 2;
+    @media (max-width: 1000px) {
+      grid-column: span 6;
+      grid-row: span 2;
+    }
   }
   
   &.wide {
     grid-row: span 2;
     grid-column: span 3;
+    @media (max-width: 1000px) {
+      grid-column: span 6;
+      grid-row: span 2;
+    }
   }
     
   &:hover {
