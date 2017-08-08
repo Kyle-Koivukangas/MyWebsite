@@ -37,9 +37,6 @@ $link-color: $accent;
 // ===================
 
 * { box-sizing: border-box; }
-.active {
-  color: $menu-active-color!important;
-}
 
 body {
   background: $body-background;
@@ -93,7 +90,7 @@ body {
   }
 }
 
-nav a:focus, nav a:active, nav a:hover, :target {
+nav a:active, nav a:hover {
   color: $light-gray;
 }
 
