@@ -36,8 +36,8 @@
     <nav>
       <a href="/home/index" class="nav-item">Home</a>
       <a href="/home/about" class="nav-item">About</a>
-      <a href="/projects/index" class="nav-item">Projects</a>
-      <a href="/blog/index" class="nav-item">Blog</a>    
+      <a href="/projects" class="nav-item">Projects</a>
+      <a href="/blog" class="nav-item">Blog</a>    
       <a href="/home/contact" class="nav-item">Contact</a>
     </nav>
   </div>
@@ -53,7 +53,7 @@
 
     <!-- jQuery  -->
   <script src="/static/bower_components/jquery-dist/jquery.min.js?cacheId=${view.build_cache_id('/static/bower_components/jquery-dist/jquery.min.js')}"></script>
-  <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+   <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>  -->
   
   <!-- Bootstrap Core JavaScript -->
   <!-- <script src="/static/bower_components/bootstrap-css/js/bootstrap.min.js?cacheId=${view.build_cache_id('/static/bower_components/bootstrap-css/js/bootstrap.min.js')}"></script> -->
