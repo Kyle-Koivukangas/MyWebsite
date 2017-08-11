@@ -117,7 +117,7 @@ nav a:active, nav a:hover {
   height: 100%;
   grid-template-rows: repeat(8, 1fr);
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
+  grid-gap: 15px;
 }
 
 .project-item {
@@ -196,7 +196,7 @@ nav a:active, nav a:hover {
     content: '';
     display: block;
     background: $black;
-    opacity: 0.5;
+    opacity: 0.3;
     position: absolute;
     top: 0;
     right: 0;
