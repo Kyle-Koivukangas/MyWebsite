@@ -6,12 +6,11 @@
     <div metal:fill-slot="main_content">
 
 
-        <header>
-            <h1>JSON and AJAX</h1>
-            <button id="btn">Fetch Info for 3 New Animals</button>
-        </header>
+        <div class="page-wrap">
+            <h1>Handlebars Testing</h1>
+            <div id="pets-container"></div>            
+        </div>
 
-        <div id="animal-info">ANIMAL INFO HERE:</div>
 
     </div> <!-- main_content -->
 
