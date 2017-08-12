@@ -18,6 +18,7 @@ __pycache__/
 settings.json
 *.psd
 .eslintrc.json
+*.DS_Store
 
 #not sure how Node installed a bunch of modules here but here's the ignore to stop crowding git...
 node_modules/
