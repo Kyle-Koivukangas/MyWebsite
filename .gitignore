@@ -17,6 +17,10 @@ __pycache__/
 #other
 settings.json
 *.psd
+.eslintrc.json
+
+#not sure how Node installed a bunch of modules here but here's the ignore to stop crowding git...
+node_modules/
 
 # Distribution / packaging
 .Python
