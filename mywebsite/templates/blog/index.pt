@@ -4,13 +4,37 @@
     </div>
 
     <div metal:fill-slot="main_content">
-
+        <script src="/static/bower_components/handlebars/handlebars.min.js"></script> 
+        
 
         <div class="page-wrap">
             <h1>Handlebars Testing</h1>
             <div id="pets-container"></div>            
         </div>
 
+        <script id="petsTemplate" type="text/x-handlebars-template">
+            {{#each pets}}
+                <div class="pet"> </div>
+                <div class="photo-column">
+                    <img src="{{photo}}" alt=""/>
+                </div>
+
+                <div class="info-column">
+                    <h2>{{name}} <span class="species">({{species}})</span></h2>
+
+                    <p>Age: {{calculateAge birthYear}}</p>
+
+                    {{#if favFoods}}
+                    <h4 class="healine-bar">Favourite Foods</h4>
+                    <ul class="favorite-foods">
+                        {{#each favFoods}}
+                            <li>{{{this}}}</li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                </div>
+            {{/each}}
+        </script>
 
     </div> <!-- main_content -->
 
