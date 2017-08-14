@@ -11,8 +11,9 @@ __pycache__/
 
 #compiled CSS
 *.min.css
-.css
+*.css
 *.scssc
+*.map
 
 #other
 settings.json
