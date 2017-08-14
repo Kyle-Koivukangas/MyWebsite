@@ -5,18 +5,36 @@
 
     <div metal:fill-slot="main_content">
         <div class="projects">
-            <div class="project-item tall hovereffect" style="background-image: url('/static/img/pokerbot.jpg');">Poker Bot</div>
-            <div class="project-item large hovereffect"  style="background-image: url('/static/img/mywebdesign.jpg');">Web Design</div>            
-            <div class="project-item small hovereffect" style="background-image: url('//unsplash.it/400/400');">three</div>
-            <div class="project-item medium hovereffect" style="background-image: url('/static/img/morse.png');">Morse Code Generator</div>            
-            <div class="project-item large hovereffect" style="background-image: url('/static/img/kcrypt.jpg');">kCrypt</div>
-            <div class="project-item medium hovereffect" style="background-image: url('/static/img/backupmanager.jpg');">BackupManager</div>
+            <div onclick="projectBtn('pokerbot');" class="project-item tall hovereffect" style="background-image: url('/static/img/pokerbot.jpg');">Poker Bot</div>
+            <div onclick="projectBtn()" class="project-item large hovereffect"  style="background-image: url('/static/img/mywebdesign.jpg');">Web Design</div>            
+            <div onclick="projectBtn()" class="project-item small hovereffect" style="background-image: url('//unsplash.it/400/400');">three</div>
+            <div onclick="projectBtn()" class="project-item medium hovereffect" style="background-image: url('/static/img/morse.png');">Morse Code Generator</div>            
+            <div onclick="projectBtn()" class="project-item large hovereffect" style="background-image: url('/static/img/kcrypt.jpg');">kCrypt</div>
+            <div onclick="projectBtn()" class="project-item medium hovereffect" style="background-image: url('/static/img/backupmanager.jpg');">BackupManager</div>
         </div>
 
+        
 
     </div> <!-- main_content -->
 
-    <div metal:fill-slot="addtional_js">
+    <div metal:fill-slot="additional_js">
+
+        <script src="/static/bower_components/jquery-dist/jquery.min.js"></script>
+        <script src="/static/js/test.js"></script>
+        <!-- <script>
+            $(function() {
+                var animationName = "animated fadeOutLeft";
+                var animationEnd = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
+
+                $(div.project-item).on('click', function() {
+                    $('projects').addClass(animationName).one(animationEnd, function() {
+                        $(this).removeClass(animationName);
+                    };
+                });
+
+            });
+        </script> -->
+
     </div>
 
 </div>

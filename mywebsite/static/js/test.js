@@ -1,40 +1,28 @@
-var ourRequest = new XMLHttpRequest();
-ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/pets-data.json');
 
-ourRequest.onload = function() {
-  if (ourRequest.status >= 200 && ourRequest.status < 400) {
-    // This is where we'll do something with the retrieved data
-    var petsData = JSON.parse(ourRequest.responseText);
+function projectBtn(project) {
+    var animationName = "animated fadeOutLeft";
+    var animationEnd = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
 
-    createHTML(petsData);
+    console.log(this);
+    $('.project-item').addClass("animated fadeOutLeftBig").one(animationEnd, function() {
+        loadPage(project);
+    });
+    
+}
 
-  } else {
-    console.log("We connected to the server, but it returned an error.");
-  }
-};
-
-ourRequest.onerror = function() {
-  console.log("Connection error");
-};
-
-ourRequest.send();  
-
-Handlebars.registerHelper("calculateAge", function(birthYear) {
-  var age = new Date().getFullYear() - birthYear;
-  if (age < 1) {
-    return "Less than a year old."
-  } else{ 
-    return age + " years old."
-  };
-});
-
-
-function createHTML (data) {
-  console.log(data);
-  var rawTemplate = document.getElementById("petsTemplate").innerHTML;
-  var compiledTemplate = Handlebars.compile(rawTemplate);
-  var ourGeneratedHTML = compiledTemplate(data);
-
-  var petsContainer = document.getElementById("pets-container");
-  petsContainer.innerHTML = ourGeneratedHTML;
+function loadPage(project) {
+    console.log("http://localhost:6543/projects/".concat(project));
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:6543/projects/".concat(project),
+        dataType: "json",
+        async: true,
+        data: {},
+        success: function (json) {
+            json = JSON.parse(json)
+            $('.projects').html(json.message);
+            console.log(json);
+            console.log(json.message);  
+        }
+    });
 }

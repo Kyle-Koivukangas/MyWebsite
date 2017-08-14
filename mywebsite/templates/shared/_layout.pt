@@ -15,7 +15,10 @@
   <link href="/static/css/normalize.css?cacheId=${view.build_cache_id('/static/css/normalize.css')}" rel="stylesheet">
   <link href="/static/css/main.css?cacheId=${view.build_cache_id('/static/css/main.css')}" rel="stylesheet">
 
-
+  
+  <link rel="stylesheet" href="/static/css/animate.css"/>
+  
+  
   <!-- Custom Fonts -->
   <link href="/static/bower_components/font-awesome/css/font-awesome.min.css?cacheId=${view.build_cache_id('/static/bower_components/font-awesome/css/font-awesome.min.css')}" rel="stylesheet" type="text/css">
 
@@ -36,7 +39,7 @@
     <nav>
       <a href="/home/index" class="nav-item">Home</a>
       <a href="/home/about" class="nav-item">About</a>
-      <a href="/projects" class="nav-item">Projects</a>
+      <a href="/projects/index" class="nav-item">Projects</a>
       <a href="/blog" class="nav-item">Blog</a>    
       <a href="/home/contact" class="nav-item">Contact</a>
     </nav>
