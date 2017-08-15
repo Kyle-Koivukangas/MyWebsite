@@ -3,7 +3,7 @@
         <!-- <link href="/static/css/test.css?cacheId=${view.build_cache_id('/static/css/test.css')}" rel="stylesheet"> -->
     </div>
 
-    <div metal:fill-slot="main_content">
+    <div id="projects-content" metal:fill-slot="main_content">
         <div class="projects">
             <div onclick="projectBtn('pokerbot');" class="project-item tall hovereffect" style="background-image: url('/static/img/pokerbot.jpg');">Poker Bot</div>
             <div onclick="projectBtn()" class="project-item large hovereffect"  style="background-image: url('/static/img/mywebdesign.jpg');">Web Design</div>            
@@ -21,19 +21,6 @@
 
         <script src="/static/bower_components/jquery-dist/jquery.min.js"></script>
         <script src="/static/js/test.js"></script>
-        <!-- <script>
-            $(function() {
-                var animationName = "animated fadeOutLeft";
-                var animationEnd = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
-
-                $(div.project-item).on('click', function() {
-                    $('projects').addClass(animationName).one(animationEnd, function() {
-                        $(this).removeClass(animationName);
-                    };
-                });
-
-            });
-        </script> -->
 
     </div>
 
