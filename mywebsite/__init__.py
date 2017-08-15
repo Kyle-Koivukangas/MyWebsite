@@ -8,12 +8,15 @@ import mywebsite.controllers.projects_controller as projects
 import mywebsite.controllers.blog_controller as blog
 import mywebsite.controllers.admin_controller as admin
 from mywebsite.data.dbsession import DbSessionFactory
+import mywebsite.startup_scripts.projects_json_builder as projects_json_builder
 
 
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
     config = Configurator(settings=settings)
+
+    run_startup_scripts()
 
     init_includes(config)  
     init_routing(config)
@@ -52,3 +55,6 @@ def add_controller_routes(config, ctrl, prefix):
 def init_includes(config):
     config.include('pyramid_chameleon')
     config.include('pyramid_handlers')
+
+def run_startup_scripts():
+    projects_json_builder.build_projects_json()
