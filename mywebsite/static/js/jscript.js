@@ -1,5 +1,5 @@
 
-console.log("js loaded");
+
 
 $(document).ready(function() { 
 // this will get the full URL at the address bar and slice off the last element or two, depending on how many there are
@@ -19,3 +19,5 @@ var target = $('nav a[href="/'+path+'"]');
 $(target.addClass('active'));
 
 });
+
+console.log("jscript.js finished loading");
