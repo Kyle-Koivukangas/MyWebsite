@@ -1,4 +1,23 @@
 
+var projectsJSON = {}
+backgroundLoad()
+
+function backgroundLoad() {
+    console.log("making AJAX request..")
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:6543/projects/projectsjson",
+        dataType: "JSON",
+        async: true,
+        data: {},
+        success: function (json) {
+            projectsJSON = JSON.parse(json);
+            console.log(projectsJSON);
+            console.log("backgroundLoad finished");
+        }
+    });
+}
+
 function projectBtn(project) {
     var animationName = "animated fadeOutLeft";
     var animationEnd = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
@@ -11,18 +30,6 @@ function projectBtn(project) {
 }
 
 function loadPage(project) {
-    console.log("http://localhost:6543/projects/".concat(project));
-    $.ajax({
-        type: "GET",
-        url: "http://localhost:6543/projects/".concat(project),
-        dataType: "json",
-        async: true,
-        data: {},
-        success: function (json) {
-            json = JSON.parse(json)
-            $('.projects').html(json.message);
-            console.log(json);
-            console.log(json.message);  
-        }
-    });
+    console.log(projectsJSON.message[project])
+    $('.projects').html(projectsJSON.message[project]);
 }
