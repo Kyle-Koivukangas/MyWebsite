@@ -40,10 +40,9 @@ class Builder():
 
     def make_json(self):
         self.parse_templates()
-        json_data = json.dumps(self.projects_html, default=lambda o: o.__dict__, sort_keys=True, indent=4)
-
+        
         with open(self.projects_json, 'w') as outfile:
-            json.dump(json_data, outfile)
+            json.dump(self.projects_html, outfile, default=lambda o: o.__dict__, sort_keys=True, indent=4)
         
         print("\nProjects JSON created successfully\n")
 
