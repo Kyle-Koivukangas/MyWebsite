@@ -1,0 +1,15 @@
+<div metal:use-macro="view.layout">
+    <div  id="projects-content" metal:fill-slot="main_content">
+
+        <div class='project-page animated fadeInRightBig'>
+            <h1>Web Development</h1>
+            <P>This is a page about my web development projects..</P>
+        </div>
+
+    </div>
+
+
+    <div metal:fill-slot="addtional_css">
+        <!-- Added by index.pt -->
+    </div>
+</div>
