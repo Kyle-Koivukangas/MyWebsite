@@ -2,9 +2,7 @@
 <div metal:use-macro="view.layout">
     <div metal:fill-slot="main_content">
 
-
         <h1>ADMIN PANEL - user accounts list</h1>
-
         <div>
             <ul>
                 <li>Email: Password: </li>
@@ -13,5 +11,6 @@
             </ul>
         </div>
         <button type="submit" ><a href="/admin/new_account">add account</a></button>
+        
     </div>
 </div>
