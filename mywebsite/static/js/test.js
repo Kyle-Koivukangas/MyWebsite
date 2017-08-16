@@ -13,6 +13,8 @@
 
     function saveJSON(jsonFile) {
         json = jsonFile;
+        console.log(`New JSON file: `);
+        console.log(json);
     };
 
     //private method
@@ -26,9 +28,7 @@
             data: {},
             success: function(json) {
                 saveJSON(JSON.parse(json));
-                //projects.json = JSON.parse(json);
-                console.log("AJAX request Complete: ");
-                console.log(projects.json);
+                //console.log("AJAX request Complete.");
             }
         });
     })();
@@ -57,23 +57,14 @@
         }
 
 
-        console.log("button pressed");
         $(contentDiv).addClass(fadeOutAnimation).one(animationEnd, function() {
-            console.log("Fade OUT Class ADDED <---");
-            //fade out animation removal (after animation completes)
             $(contentDiv).removeClass(fadeOutAnimation);
-            console.log("Fade OUT Class REMOVED...");
 
-            //insert new HTML
+            //insert new HTML from json
             $(contentDiv).html(json.message[page]);
-            console.log("New page loaded ----------------------------------------------");
 
-            //fade in animation on new HTML
             $(contentDiv).addClass(fadeInAnimation).one(animationEnd, function() {
-                console.log("Fade IN Class ADDED --->");
-                //fade in animation removal (after animation completes)
                 $(contentDiv).removeClass(fadeInAnimation);
-                console.log("Fade IN Class REMOVED.....");
             })
         });
 
