@@ -9,6 +9,7 @@
     var fadeInAnimation = "animated fadeInRightBig";
     var animationEnd = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
     var json = {};
+    var isOnIndex = true;
 
     function saveJSON(jsonFile) {
         json = jsonFile;
@@ -36,6 +37,18 @@
 
     //Public Method
     projects.btn = function(page) {
+        if (isOnIndex === true) {
+            fadeOutAnimation = "animated fadeOutLeftBig";
+            fadeInAnimation = "animated fadeInRightBig";
+        } else if (isOnIndex === false) {
+            fadeOutAnimation = "animated fadeOutRightBig";
+            fadeInAnimation = "animated fadeInLeftBig";
+        } else {
+            fadeOutAnimation = "animated fadeOut";
+            fadeInAnimation = "animated fadeIn";   
+        }
+
+
         console.log("button pressed");
         $(contentDiv).addClass(fadeOutAnimation).one(animationEnd, function() {
             console.log("Fade OUT Class ADDED <---");
@@ -55,6 +68,14 @@
                 console.log("Fade IN Class REMOVED.....");
             })
         });
+
+        if (page === 'index') {
+            isOnIndex = true;
+            console.log("page switched to INDEX");
+        } else {
+            isOnIndex = false;
+            console.log(`page switched to ${page}`)
+        }
     };
 
 

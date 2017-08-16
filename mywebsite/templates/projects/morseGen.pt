@@ -1,11 +1,11 @@
 <div metal:use-macro="view.layout">
     <div  id="projects-content" metal:fill-slot="main_content">
 
-        <div class='project-page animated fadeInRightBig'>
+        <div class='project-page'>
             <h1>Morse Code Generator</h1>
             <P>This is a page about the morse code generator I made..</P>
         </div>
-
+        <button type="submit" ><a href="javascript: projects.btn('index');">Back</a></button>
     </div>
 
 

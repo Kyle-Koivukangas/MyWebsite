@@ -6,14 +6,13 @@
     <div id="projects-content" metal:fill-slot="main_content">
         <div class="projects">
             <div onclick="projects.btn('pokerbot');" class="project-item tall hovereffect" style="background-image: url('/static/img/pokerbot.jpg');">Poker Bot</div>
-            <div onclick="projectBtn()" class="project-item large hovereffect"  style="background-image: url('/static/img/mywebdesign.jpg');">Web Design</div>            
-            <div onclick="projectBtn()" class="project-item small hovereffect" style="background-image: url('//unsplash.it/400/400');">three</div>
-            <div onclick="projectBtn()" class="project-item medium hovereffect" style="background-image: url('/static/img/morse.png');">Morse Code Generator</div>            
-            <div onclick="projectBtn()" class="project-item large hovereffect" style="background-image: url('/static/img/kcrypt.jpg');">kCrypt</div>
-            <div onclick="projectBtn()" class="project-item medium hovereffect" style="background-image: url('/static/img/backupmanager.jpg');">BackupManager</div>
+            <div onclick="projects.btn('webdev')" class="project-item large hovereffect"  style="background-image: url('/static/img/mywebdesign.jpg');">Web Development</div>            
+            <div onclick="projects.btn('three')" class="project-item small hovereffect" style="background-image: url('//unsplash.it/400/400');">three</div>
+            <div onclick="projects.btn('morseGen')" class="project-item medium hovereffect" style="background-image: url('/static/img/morse.png');">Morse Code Generator</div>            
+            <div onclick="projects.btn('kCrypt')" class="project-item large hovereffect" style="background-image: url('/static/img/kcrypt.jpg');">kCrypt</div>
+            <div onclick="projects.btn('backupmanager')" class="project-item medium hovereffect" style="background-image: url('/static/img/backupmanager.jpg');">BackupManager</div>
         </div>
 
-        
 
     </div> <!-- main_content -->
 
