@@ -1,7 +1,7 @@
 <div metal:use-macro="view.layout">
     <div  id="projects-content" metal:fill-slot="main_content">
 
-        <div class='project-page animated fadeInRightBig'>
+        <div class='project-page'>
             <h1>Poker Bot</h1>
             <P>This is a page about my poker bot that I am developing..</P>
         </div>
