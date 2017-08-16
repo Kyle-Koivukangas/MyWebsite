@@ -37,15 +37,23 @@
 
     //Public Method
     projects.btn = function(page) {
-        if (isOnIndex === true) {
+
+        var screenWidth = $(window).width();
+        if (isOnIndex === true && screenWidth < 1500) {
             fadeOutAnimation = "animated fadeOutLeftBig";
             fadeInAnimation = "animated fadeInRightBig";
-        } else if (isOnIndex === false) {
+
+        } else if (isOnIndex === true && screenWidth >= 1500) {
+            fadeOutAnimation = "animated fadeOutUpBig";
+            fadeInAnimation = "animated fadeInUpBig";
+
+        } else if (isOnIndex === false && screenWidth < 1500) {
             fadeOutAnimation = "animated fadeOutRightBig";
             fadeInAnimation = "animated fadeInLeftBig";
-        } else {
-            fadeOutAnimation = "animated fadeOut";
-            fadeInAnimation = "animated fadeIn";   
+
+        } else if (isOnIndex === false && screenWidth >= 1500) {
+            fadeOutAnimation = "animated fadeOutDownBig";
+            fadeInAnimation = "animated fadeInDownBig";   
         }
 
 
