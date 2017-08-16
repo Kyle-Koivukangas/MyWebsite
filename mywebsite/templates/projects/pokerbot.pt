@@ -6,6 +6,9 @@
             <P>This is a page about my poker bot that I am developing..</P>
         </div>
 
+        
+        <button type="submit" ><a href="javascript: projectBtn('index');">Back</a></button>
+
     </div>
 
 

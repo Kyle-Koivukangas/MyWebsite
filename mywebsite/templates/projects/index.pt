@@ -5,7 +5,7 @@
 
     <div id="projects-content" metal:fill-slot="main_content">
         <div class="projects">
-            <div onclick="projectBtn('pokerbot');" class="project-item tall hovereffect" style="background-image: url('/static/img/pokerbot.jpg');">Poker Bot</div>
+            <div onclick="projects.btn('pokerbot');" class="project-item tall hovereffect" style="background-image: url('/static/img/pokerbot.jpg');">Poker Bot</div>
             <div onclick="projectBtn()" class="project-item large hovereffect"  style="background-image: url('/static/img/mywebdesign.jpg');">Web Design</div>            
             <div onclick="projectBtn()" class="project-item small hovereffect" style="background-image: url('//unsplash.it/400/400');">three</div>
             <div onclick="projectBtn()" class="project-item medium hovereffect" style="background-image: url('/static/img/morse.png');">Morse Code Generator</div>            
