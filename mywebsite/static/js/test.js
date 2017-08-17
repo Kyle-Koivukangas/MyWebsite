@@ -29,13 +29,28 @@
             success: function(json) {
                 saveJSON(JSON.parse(json));
                 //console.log("AJAX request Complete.");
+                if (window.location.hash.replace('#','') != '') {
+                    projects.loadUrlHash();
+                };
             }
         });
     })();
 
+    //Public Methods
+    projects.loadPageFromJson = function(page) {
+        $(contentDiv).html(json.message[page]);
+    };
 
+    projects.loadUrlHash = function() {
+        var page = window.location.hash.replace('#', '');
+        projects.loadPageFromJson(page);
+        console.log(`loaded ${page} from json.`);
+    };
 
-    //Public Method
+    projects.setHash = function(page) {
+        window.location.hash = page;
+    };
+
     projects.btn = function(page) {
 
         var screenWidth = $(window).width();
@@ -55,19 +70,18 @@
             fadeOutAnimation = "animated fadeOutDownBig";
             fadeInAnimation = "animated fadeInDownBig";   
         }
-
-
+        // Page change and corresponding animations
         $(contentDiv).addClass(fadeOutAnimation).one(animationEnd, function() {
             $(contentDiv).removeClass(fadeOutAnimation);
 
-            //insert new HTML from json
-            $(contentDiv).html(json.message[page]);
+            projects.loadPageFromJson(page);
 
             $(contentDiv).addClass(fadeInAnimation).one(animationEnd, function() {
                 $(contentDiv).removeClass(fadeInAnimation);
             })
         });
 
+        projects.setHash(page);
         if (page === 'index') {
             isOnIndex = true;
             console.log("page switched to INDEX");

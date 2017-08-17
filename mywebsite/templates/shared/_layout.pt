@@ -39,7 +39,7 @@
     <nav>
       <a href="/home/index" class="nav-item">Home</a>
       <a href="/home/about" class="nav-item">About</a>
-      <a href="/projects/index" class="nav-item">Projects</a>
+      <a href="/projects" class="nav-item">Projects</a>
       <a href="/blog" class="nav-item">Blog</a>    
       <a href="/home/contact" class="nav-item">Contact</a>
     </nav>
