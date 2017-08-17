@@ -1,6 +1,6 @@
 <div metal:use-macro="view.layout">
     <div metal:fill-slot="additional_css">
-        <!-- <link href="/static/css/test.css?cacheId=${view.build_cache_id('/static/css/test.css')}" rel="stylesheet"> -->
+         <link href="/static/css/test.css?cacheId=${view.build_cache_id('/static/css/test.css')}" rel="stylesheet"> 
     </div>
 
     <div id="projects-content" metal:fill-slot="main_content">

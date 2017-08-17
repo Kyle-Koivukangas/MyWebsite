@@ -2,14 +2,31 @@
     <div  id="projects-content" metal:fill-slot="main_content">
 
         <div class='project-page'>
-            <h1>Web Development</h1>
-            <P>This is a page about my web development projects..</P>
+            <h1 class="header-text">Web Development</h1>
+            <div class="header" style="background-image: url('/static/img/marmoset-projectsController.png');"></div>
+            <div class="content">
+                <P>
+                This particular website is built with a Python (Pyramid) backend. I'm using Pyramid handlers for view controllers and chameleon for the template language.
+                The groundwork has been written for a full user account system with a SQLite database, password encryption/hashing and cookie authentication, 
+                I just haven't built the font-end for it yet.
+                </P>
+                <p>
+                The projects page layout was made with plain old CSS grids, the HTML for each page is loaded in the background 
+                via AJAX call which allows javascript to seemlessly insert HTML for page changes; it acts like a "single page app", complete with transtion animations 
+                and URL hashing to keep track of the page. I wrote a script that extracts the HTML from the templates for each project page at server startup. This information is saved
+                to a JSON file which is what is served to the user when they load the projects page. That's how I have a single page app within a template-based website.
+                </p>
+            </div>
+            <div class="pimg" style="background-image: url('/static/img/marmoset-projectsJavascript.png');"></div>
+            
+            <!-- <button class="back-btn" type="submit" ><a href="javascript: projects.btn('index');">Back</a></button> -->
+            <h2 class="back-btn" onclick="projects.btn('index)">Back</h2>
+            
         </div>
-        <button type="submit" ><a href="javascript: projects.btn('index');">Back</a></button>
     </div>
 
 
-    <div metal:fill-slot="addtional_css">
+    <div metal:fill-slot="additional_css">
         <!-- Added by index.pt -->
     </div>
 </div>
