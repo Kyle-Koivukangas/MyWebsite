@@ -57,7 +57,3 @@ class BaseController:
 
         return AccountService.find_account_by_id(user_id)
 
-    @property
-    def active_page(self):
-        """Shows the current 'active' page being displayed, used for lighting up navbar on active page"""
-
